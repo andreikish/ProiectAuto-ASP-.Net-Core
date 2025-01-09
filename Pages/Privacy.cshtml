@@ -1,8 +1,55 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Politica de Confidențialitate";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="privacy-container">
+    <h1 class="text-center">Politica de Confidențialitate</h1>
+    <p>
+        La Service Auto, confidențialitatea datelor dumneavoastră este prioritatea noastră. Această politică explică modul în care colectăm, utilizăm și protejăm informațiile personale.
+    </p>
+    <h2>Ce date colectăm?</h2>
+    <p>
+        Colectăm informațiile pe care ni le furnizați voluntar, cum ar fi numele, adresa de e-mail și numărul de telefon, atunci când solicitați un serviciu sau ne contactați.
+    </p>
+    <h2>Cum utilizăm aceste date?</h2>
+    <p>
+        Datele sunt utilizate pentru a vă oferi servicii personalizate, pentru a răspunde solicitărilor dumneavoastră și pentru a îmbunătăți experiența generală.
+    </p>
+    <h2>Protecția datelor</h2>
+    <p>
+        Luăm măsuri stricte pentru a proteja datele dumneavoastră împotriva accesului neautorizat sau utilizării abuzive.
+    </p>
+    <p class="text-center">
+        Pentru mai multe informații, vă rugăm să ne contactați.
+    </p>
+</div>
+
+<style>
+    .privacy-container {
+        margin: 40px auto;
+        padding: 20px;
+        max-width: 800px;
+        background-color: #fff9e6; 
+        border: 1px solid #f0ad4e;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .privacy-container h1 {
+            color: #f0ad4e;
+            margin-bottom: 20px;
+        }
+
+        .privacy-container h2 {
+            color: #d9822b;
+            margin-top: 20px;
+        }
+
+        .privacy-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+</style>
