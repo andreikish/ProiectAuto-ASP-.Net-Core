@@ -1,0 +1,50 @@
+﻿@page
+@model ProiectAutoCore.Pages.Cars.IndexModel
+
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<h1 class="mb-4">Cars</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">
+        <i class="fa-solid fa-plus"></i> Add New Car
+    </a>
+</p>
+
+<table class="table table-hover table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Car[0].Make)</th>
+            <th>@Html.DisplayNameFor(model => model.Car[0].Model)</th>
+            <th>@Html.DisplayNameFor(model => model.Car[0].Year)</th>
+            <th>@Html.DisplayNameFor(model => model.Car[0].VIN)</th>
+            <th>@Html.DisplayNameFor(model => model.Car[0].Client.Email)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Car)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Make)</td>
+                <td>@Html.DisplayFor(modelItem => item.Model)</td>
+                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                <td>@Html.DisplayFor(modelItem => item.VIN)</td>
+                <td>@Html.DisplayFor(modelItem => item.Client.Email)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">
+                        <i class="fa-solid fa-circle-info"></i> Details
+                    </a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

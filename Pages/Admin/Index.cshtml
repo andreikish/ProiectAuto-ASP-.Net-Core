@@ -1,0 +1,43 @@
+﻿@page
+@model ProiectAutoCore.Pages.Admin.IndexModel
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<h1>Admin Panel</h1>
+<p>Gestionați utilizatorii și rolurile lor.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Actiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@(user.IsAdmin ? "Admin" : "User")</td>
+                <td>
+                    @if (user.IsAdmin)
+                    {
+                        <form method="post" asp-page-handler="Demote">
+                            <input type="hidden" name="userId" value="@user.Id" />
+                            <button class="btn btn-warning">Demote to User</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" asp-page-handler="Promote">
+                            <input type="hidden" name="userId" value="@user.Id" />
+                            <button class="btn btn-success">Promote to Admin</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
