@@ -1,10 +1,42 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Service Auto - Bun venit";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="welcome-container text-center">
+    <h1 class="display-4">Bun venit la Service Auto!</h1>
+    <p class="lead">
+        Oferim servicii de întreținere și reparații auto de înaltă calitate. Vehiculul dumneavoastră este pe mâini bune!
+    </p>
+    <p>
+        Descoperiți gama noastră completă de servicii și contactați-ne pentru o programare:
+    </p>
+    <a href="/Services" class="btn btn-primary btn-lg">Servicii</a>
 </div>
+
+<style>
+    .welcome-container {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .welcome-container h1 {
+            color: #f0ad4e;
+        margin-bottom: 20px;
+    }
+    .welcome-container p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .btn-primary {
+        background-color: #f0ad4e;
+        border-color: #f0ad4e;
+    }
+    .btn-primary:hover {
+        background-color: #f0ad4e;
+            border-color: #916526;
+    }
+</style>
